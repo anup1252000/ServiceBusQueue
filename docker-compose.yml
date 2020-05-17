@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  servicebus.queuetopic:
+    image: ${DOCKER_REGISTRY-}servicebus
+    build:
+      context: .
+      dockerfile: ServiceBus.QueueTopic/Dockerfile
+
+  consumer:
+    image: ${DOCKER_REGISTRY-}consumer
+    build:
+      context: .
+      dockerfile: Consumer/Dockerfile
+
